@@ -1,0 +1,11 @@
+retail_project:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: internship-project-484400
+      dataset: dbt_staging
+      threads: 4
+      location: EU
+      priority: interactive
