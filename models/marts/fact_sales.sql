@@ -1,4 +1,4 @@
-{{ config(schema='dbt_marts' }}
+{{ config(schema='dbt_marts') }}
 
 with fact_sales as(
 
