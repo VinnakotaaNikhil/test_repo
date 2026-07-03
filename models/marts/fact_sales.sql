@@ -1,6 +1,4 @@
-{{ config(schema='dbt_marts',
-            materialized = 'incremental',
-                unique_key = 'order_id') }}
+{{ config(schema='dbt_marts' }}
 
 with fact_sales as(
 
@@ -14,10 +12,6 @@ with fact_sales as(
 
     from {{ ref('int_sales_enriched') }}  
 
-    
-{% if is_incremental() %}
-    where order_purchase_timestamp > (select max(order_purchase_timestamp) from {{ this }})
-{% endif %}
 )
 
 select * from fact_sales
